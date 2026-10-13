@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react'
+import { assetPath } from '../lib/navigation'
 
 const navLinks = [
-  { label: 'Work', href: '#portfolio' },
+  { label: 'Portfolio', href: '#portfolio' },
   { label: 'Services', href: '#services' },
   { label: 'Process', href: '#process' },
-  { label: 'About', href: '#why' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]
 
 function Logo() {
   return (
     <a href="#hero" className="flex items-center gap-2 shrink-0">
-      <img src="/logo.png" alt="Piweb Technology" className="h-7 w-auto rounded-lg" />
+      <img src={assetPath('/logo.png')} alt="Piweb Technology" className="h-7 w-auto rounded-lg" />
       <span className="text-[15px] font-display font-bold text-secondary tracking-tight">Piweb</span>
     </a>
   )
@@ -45,7 +47,7 @@ export default function Header() {
     <header className="fixed top-12 left-0 right-0 z-50 px-4 sm:px-6">
       <div className="max-w-[1400px] mx-auto">
         <div
-          className={`mx-auto max-w-[1180px] flex items-center justify-between gap-4 rounded-full border transition-all duration-300 ${
+          className={`fire-border relative mx-auto max-w-[1180px] flex items-center justify-between gap-4 rounded-full border transition-all duration-300 ${
             scrolled
               ? 'bg-white/75 backdrop-blur-xl border-secondary/10 shadow-[0_10px_35px_rgba(11,14,26,0.1)] px-4 sm:px-5 py-2'
               : 'bg-white/40 backdrop-blur-md border-white/50 shadow-[0_10px_30px_rgba(11,14,26,0.05)] px-5 sm:px-6 py-2.5'
@@ -99,7 +101,7 @@ export default function Header() {
 
         <div
           className={`mx-auto max-w-[1180px] lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            menuOpen ? 'max-h-[26rem] opacity-100 mt-2' : 'max-h-0 opacity-0'
+            menuOpen ? 'max-h-[30rem] opacity-100 mt-2' : 'max-h-0 opacity-0'
           }`}
         >
           <nav

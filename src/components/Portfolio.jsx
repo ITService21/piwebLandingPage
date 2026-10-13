@@ -1,5 +1,6 @@
 import Reveal from './Reveal'
 import { accents, accentAt } from '../lib/accentColors'
+import { assetPath } from '../lib/navigation'
 
 const projects = [
   {
@@ -135,7 +136,7 @@ function ProjectCard({ project, accent, delay }) {
 
         <div className="aspect-[16/10] overflow-hidden relative bg-secondary/5 shrink-0">
           <img
-            src={project.image}
+            src={assetPath(project.image)}
             alt={`${project.name} — website built by Piweb Technology`}
             className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover/card:scale-[1.08]"
             loading="lazy"

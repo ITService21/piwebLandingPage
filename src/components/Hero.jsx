@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Reveal from "./Reveal";
 import NetworkBackground from "./NetworkBackground";
 import { accentAt } from "../lib/accentColors";
+import { assetPath } from '../lib/navigation'
 
 function TypewriterWord({ word, className = "" }) {
   const [text, setText] = useState("");
@@ -154,7 +155,7 @@ function LayeredShowcase() {
       <div className="absolute -top-[2%] left-[16%] w-[30%] -rotate-[9deg] rounded-lg overflow-hidden border border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] bg-white z-0 hidden sm:block">
         <div className="h-[2px] bg-gradient-to-r from-emerald-400 to-teal-500" />
         <div className="aspect-[16/11] overflow-hidden">
-          <img src="/portfolio/arohan.jpg" alt="Aarohan College website" className="w-full h-full object-cover object-top" loading="eager" />
+          <img src={assetPath('/portfolio/arohan.jpg')} alt="Aarohan College website" className="w-full h-full object-cover object-top" loading="eager" />
         </div>
       </div>
 
@@ -162,7 +163,7 @@ function LayeredShowcase() {
       <div className="absolute top-[42%] -right-[5%] w-[26%] rotate-[11deg] rounded-lg overflow-hidden border border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] bg-white z-0 hidden sm:block">
         <div className="h-[2px] bg-gradient-to-r from-lime-400 to-green-500" />
         <div className="aspect-[16/11] overflow-hidden">
-          <img src="/portfolio/pitama.jpg" alt="Pitama India website" className="w-full h-full object-cover object-top" loading="eager" />
+          <img src={assetPath('/portfolio/pitama.jpg')} alt="Pitama India website" className="w-full h-full object-cover object-top" loading="eager" />
         </div>
       </div>
 
@@ -170,7 +171,7 @@ function LayeredShowcase() {
       <div className="absolute bottom-[4%] -left-[6%] w-[28%] -rotate-[12deg] rounded-lg overflow-hidden border border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] bg-white z-0 hidden sm:block">
         <div className="h-[2px] bg-gradient-to-r from-sky-400 to-blue-500" />
         <div className="aspect-[16/11] overflow-hidden">
-          <img src="/portfolio/optimalclasses.jpg" alt="Optimal Classes website" className="w-full h-full object-cover object-top" loading="eager" />
+          <img src={assetPath('/portfolio/optimalclasses.jpg')} alt="Optimal Classes website" className="w-full h-full object-cover object-top" loading="eager" />
         </div>
       </div>
 
@@ -184,7 +185,7 @@ function LayeredShowcase() {
         </div>
         <div className="aspect-[16/11] overflow-hidden">
           <img
-            src="/portfolio/viradiya.jpg"
+            src={assetPath('/portfolio/viradiya.jpg')}
             alt="Viradiya Associates website"
             className="w-full h-full object-cover object-top"
             loading="eager"
@@ -202,7 +203,7 @@ function LayeredShowcase() {
         </div>
         <div className="aspect-[16/11] overflow-hidden">
           <img
-            src="/portfolio/growstartup.png"
+            src={assetPath('/portfolio/growstartup.png')}
             alt="Grow Startup website"
             className="w-full h-full object-cover object-top"
             loading="eager"
@@ -227,7 +228,7 @@ function LayeredShowcase() {
         </div>
         <div className="aspect-[16/11] overflow-hidden">
           <img
-            src="/portfolio/gsbrandworks.jpg"
+            src={assetPath('/portfolio/gsbrandworks.jpg')}
             alt="A website built by Piweb Technology"
             className="w-full h-full object-cover object-top"
             loading="eager"

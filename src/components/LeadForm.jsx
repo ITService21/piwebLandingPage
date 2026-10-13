@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { goToThankYou } from '../lib/navigation'
 import Reveal from './Reveal'
 import AuroraBackground from './AuroraBackground'
 
@@ -61,9 +62,9 @@ export default function LeadForm() {
           },
         }),
       })
-      setSubmitted(true)
+      goToThankYou()
     } catch {
-      setSubmitted(true)
+      goToThankYou()
     }
     setSubmitting(false)
   }
@@ -106,8 +107,8 @@ export default function LeadForm() {
                   }
                 />
                 <ContactLine
-                  href="mailto:hello@piwebtechnology.com"
-                  label="hello@piwebtechnology.com"
+                  href="mailto:info@piwebtechnology.com"
+                  label="info@piwebtechnology.com"
                   icon={
                     <svg className="w-4 h-4 text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -116,12 +117,31 @@ export default function LeadForm() {
                 />
               </div>
 
-              <p className="text-white/30 text-sm mt-8">Jaipur, Rajasthan, India</p>
+              <div className="mt-8 space-y-3 text-white/40 text-sm leading-relaxed">
+                <p>Ganesh Nagar 1st, Jhotwara, Jaipur, Rajasthan</p>
+                <p>33, Golf Course Extension Road, Sector 50, Gurugram, Haryana</p>
+              </div>
             </Reveal>
           </div>
 
           <div className="lg:col-span-7">
             <Reveal delay={120}>
+              <a
+                href="tel:+919351870445"
+                onClick={openCallPopup}
+                className="animate-call-zoom mb-5 flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-primary via-fuchsia-500 to-blue-500 px-5 py-4 text-center text-white shadow-[0_15px_40px_-10px_rgba(168,85,247,0.6)]"
+              >
+                <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20">
+                  <span className="absolute inset-0 rounded-full bg-white/30 animate-ping" />
+                  <svg className="relative h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </span>
+                <span className="text-left leading-tight">
+                  <span className="block font-display text-lg font-extrabold sm:text-xl">Call Now: +91 93518 70445</span>
+                  <span className="block text-xs text-white/85 sm:text-sm">We&apos;re available 24/7 — talk to us anytime</span>
+                </span>
+              </a>
               <div className="bg-white rounded-2xl p-7 sm:p-10">
                 {submitted ? (
                   <div className="text-center py-14">

@@ -59,12 +59,12 @@ export default function Testimonials() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-10 pt-10 border-t border-white/10">
-            <a href="https://piwebtechnology.com/about-us/ourtestimonials" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white font-medium text-sm link-underline">
+            {/* <a href="https://piwebtechnology.com/about-us/ourtestimonials" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white font-medium text-sm link-underline">
               Read all client reviews →
-            </a>
+            </a> */}
             <span className="hidden sm:inline text-white/20">·</span>
             <a href="https://www.google.com/maps/search/Piweb+Technology+Jaipur" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white font-medium text-sm link-underline">
-              See our Google reviews →
+              See our Google reviews on google maps →
             </a>
           </div>
         </Reveal>

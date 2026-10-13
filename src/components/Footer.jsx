@@ -1,5 +1,6 @@
 import NetworkBackground from './NetworkBackground'
 import WaveDivider from './WaveDivider'
+import { assetPath } from '../lib/navigation'
 
 function WhatsAppIcon() {
   return (
@@ -13,7 +14,8 @@ const quickLinks = [
   { label: 'Work', href: '#portfolio' },
   { label: 'Services', href: '#services' },
   { label: 'Process', href: '#process' },
-  { label: 'About', href: '#why' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'About', href: '#about' },
   { label: 'FAQs', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -53,7 +55,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mt-20 pt-12 border-t border-white/10">
           <div>
             <div className="flex items-center gap-2">
-              <img src="/logo.png" alt="Piweb Technology" className="h-8 w-auto rounded-lg" />
+              <img src={assetPath('/logo.png')} alt="Piweb Technology" className="h-8 w-auto rounded-lg" />
               <span className="text-base font-display font-bold text-white">Piweb</span>
             </div>
             <p className="mt-4 text-sm text-white/45 leading-relaxed max-w-[220px]">
@@ -90,7 +92,8 @@ export default function Footer() {
                   <WhatsAppIcon /> WhatsApp
                 </a>
               </li>
-              <li className="text-sm text-white/50">Jaipur, Rajasthan, India</li>
+              <li className="text-sm text-white/50 leading-relaxed">Ganesh Nagar 1st, Jhotwara, Jaipur, Rajasthan</li>
+              <li className="text-sm text-white/50 leading-relaxed">33, Golf Course Extension Road, Sector 50, Gurugram, Haryana</li>
             </ul>
           </div>
         </div>

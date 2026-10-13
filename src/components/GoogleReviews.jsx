@@ -1,5 +1,6 @@
 import Reveal from './Reveal'
 import WaveDivider from './WaveDivider'
+import { assetPath } from '../lib/navigation'
 
 const reviews = [
   '/reviews/review-1.png',
@@ -56,7 +57,7 @@ export default function GoogleReviews() {
             <Reveal key={src} delay={i * 50} className="break-inside-avoid mb-4">
               <div className="rounded-xl overflow-hidden border border-secondary/10 bg-white shadow-[0_10px_25px_-15px_rgba(11,14,26,0.2)] transition-transform duration-300 hover:-translate-y-1">
                 <img
-                  src={src}
+                  src={assetPath(src)}
                   alt="Real Google review for Piweb Technology"
                   className="w-full h-auto block"
                   loading="lazy"

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { goToThankYou } from '../lib/navigation'
 
 const requirements = ['Business Website', 'Corporate Website', 'E-commerce', 'Landing Page', 'Website Redesign', 'Custom Website', 'Other']
 const budgets = ['Less than ₹15,000', '₹15,000 – ₹25,000', '₹25,000 – ₹50,000', '₹50,000 – ₹1,00,000', 'Above ₹1,00,000', 'Not Sure']
@@ -73,7 +74,7 @@ export default function LeadModal() {
       })
     } catch { /* continue */ }
     setSending(false)
-    setSubmitted(true)
+    goToThankYou()
   }
 
   return (
