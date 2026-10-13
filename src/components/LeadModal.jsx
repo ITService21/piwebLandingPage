@@ -59,7 +59,7 @@ export default function LeadModal() {
     if (form.phone.length !== 10) { setPhoneError('Please enter a valid 10-digit phone number'); return }
     setSending(true)
     try {
-      await fetch('https://piwebtechnology.com/send-form-mail?company=piwebtechnology', {
+      await fetch('https://piwebtechnology.com/send-form-mail?company=piweb', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
