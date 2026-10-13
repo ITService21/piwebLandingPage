@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { goToThankYou } from '../lib/navigation'
+import { trackFormSubmitted } from '../lib/tracking'
 
 const requirements = ['Business Website', 'Corporate Website', 'E-commerce', 'Landing Page', 'Website Redesign', 'Custom Website', 'Other']
 const budgets = ['Less than ₹15,000', '₹15,000 – ₹25,000', '₹25,000 – ₹50,000', '₹50,000 – ₹1,00,000', 'Above ₹1,00,000', 'Not Sure']
@@ -59,7 +60,7 @@ export default function LeadModal() {
     if (form.phone.length !== 10) { setPhoneError('Please enter a valid 10-digit phone number'); return }
     setSending(true)
     try {
-      await fetch('https://piwebtechnology.com/send-form-mail?company=piweb', {
+      const response = await fetch('https://piwebtechnology.com/send-form-mail?company=piweb', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -72,6 +73,7 @@ export default function LeadModal() {
           },
         }),
       })
+      if (response.ok) trackFormSubmitted()
     } catch { /* continue */ }
     setSending(false)
     goToThankYou()

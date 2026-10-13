@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { goToThankYou } from '../lib/navigation'
+import { trackFormSubmitted } from '../lib/tracking'
 import Reveal from './Reveal'
 import AuroraBackground from './AuroraBackground'
 
@@ -49,7 +50,7 @@ export default function LeadForm() {
     if (formData.phone.length !== 10) { setPhoneError('Please enter a valid 10-digit phone number'); return }
     setSubmitting(true)
     try {
-      await fetch('https://piwebtechnology.com/send-form-mail?company=piweb', {
+      const response = await fetch('https://piwebtechnology.com/send-form-mail?company=piweb', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -62,6 +63,7 @@ export default function LeadForm() {
           },
         }),
       })
+      if (response.ok) trackFormSubmitted()
       goToThankYou()
     } catch {
       goToThankYou()

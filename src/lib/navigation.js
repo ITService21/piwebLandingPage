@@ -14,12 +14,6 @@ export function isThankYouPath(hash = window.location.hash) {
 }
 
 export function goToThankYou() {
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('event', 'generate_lead', {
-      event_category: 'form',
-      event_label: 'thank_you',
-    })
-  }
   window.location.hash = THANK_YOU_HASH
 }
 
